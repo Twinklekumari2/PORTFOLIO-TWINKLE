@@ -1,17 +1,23 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { navItems } from "@/data";
 
-import Hero from "@/components/Hero";
-import Grid from "@/components/Grid";
-import Footer from "@/components/Footer";
-import Approach from "@/components/Approach";
-import Experience from "@/components/Experience";
-import RecentProjects from "@/components/RecentProjects";
-import Coding from "@/components/Coding"
-import { FloatingNav } from "@/components/ui/FloatingNavbar";
-import TechStack from "@/components/TechStack";
-import MiniProjects from "@/components/MiniProjects";
+const Hero = dynamic(() => import("@/components/Hero"), { ssr: false });
+const Grid = dynamic(() => import("@/components/Grid"), { ssr: false });
+const RecentProjects = dynamic(() => import("@/components/RecentProjects"), { ssr: false });
+const MiniProjects = dynamic(() => import("@/components/MiniProjects"), { ssr: false });
+const TechStack = dynamic(() => import("@/components/TechStack"), { ssr: false });
+const Experience = dynamic(() => import("@/components/Experience"), { ssr: false });
+const Approach = dynamic(() => import("@/components/Approach"), { ssr: false });
+const Coding = dynamic(() => import("@/components/Coding"), { ssr: false });
+const Footer = dynamic(() => import("@/components/Footer"), { ssr: false });
+
+const FloatingNav = dynamic(
+  () =>
+    import("@/components/ui/FloatingNavbar").then((mod) => mod.FloatingNav),
+  { ssr: false }
+);
 
 const Home = () => {
   return (

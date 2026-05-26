@@ -11,6 +11,8 @@ export default withSentryConfig(
   nextConfig,
   {
     silent: true,
+    disableLogger: true,
+    dryRun: true,
     org: "javascript-mastery",
     project: "javascript-nextjs",
   },
@@ -20,5 +22,5 @@ export default withSentryConfig(
     hideSourceMaps: true,
     disableLogger: true,
     automaticVercelMonitors: true,
-  }
+  },
 );
